@@ -216,7 +216,7 @@ const Delivery = ({ onCalculatorOpen }: DeliveryProps) => {
                 </h4>
                 <p className="text-muted-foreground mb-6">
                   Укажите материал, объём и адрес доставки — мы рассчитаем
-                  точную стоимость за 5 минут
+                  точную стоимость
                 </p>
                 <Button
                   onClick={onCalculatorOpen}

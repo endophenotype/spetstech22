@@ -33,14 +33,14 @@ app.post('/api/send-call-request', (req, res) => {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: 'tima.golubev@mail.ru',
-    subject: 'Новая заявка на звонок',
+    to: "speczteh22@yandex.ru",
+    subject: "Новая заявка на звонок",
     html: `
       <h2>Новая заявка на обратный звонок</h2>
       <p><strong>Имя:</strong> ${name}</p>
       <p><strong>Телефон:</strong> ${phone}</p>
-      <p><strong>Удобное время:</strong> ${preferredTime || 'не указано'}</p>
-      <p><strong>Вопрос:</strong> ${question || 'не указан'}</p>
+      <p><strong>Удобное время:</strong> ${preferredTime || "не указано"}</p>
+      <p><strong>Вопрос:</strong> ${question || "не указан"}</p>
     `,
   };
 
@@ -62,11 +62,11 @@ app.post('/api/send-calculator-request', (req, res) => {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: 'tima.golubev@mail.ru',
-    subject: 'Новая заявка на расчёт стоимости',
+    to: "speczteh22@yandex.ru",
+    subject: "Новая заявка на расчёт стоимости",
     html: `
       <h2>Новая заявка на расчёт стоимости</h2>
-      <p><strong>Имя:</strong> ${name || 'не указано'}</p>
+      <p><strong>Имя:</strong> ${name || "не указано"}</p>
       <p><strong>Телефон:</strong> ${phone}</p>
       <p><strong>Материал:</strong> ${material}</p>
       <p><strong>Объём:</strong> ${volume} м³</p>
