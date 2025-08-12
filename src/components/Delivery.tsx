@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Truck, MapPin, Clock, Shield, Calculator } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface DeliveryProps {
   onCalculatorOpen: () => void;
@@ -9,6 +10,7 @@ interface DeliveryProps {
 const Delivery = ({ onCalculatorOpen }: DeliveryProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -17,7 +19,7 @@ const Delivery = ({ onCalculatorOpen }: DeliveryProps) => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: isMobile ? 0.1 : 0.3 }
     );
 
     if (sectionRef.current) {
@@ -25,7 +27,7 @@ const Delivery = ({ onCalculatorOpen }: DeliveryProps) => {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [isMobile]);
 
   const deliveryFeatures = [
     {
