@@ -46,7 +46,7 @@ const CallModal = ({ isOpen, onClose }: CallModalProps) => {
     }
 
     try {
-      const response = await fetch('/api/send-call-request', {
+      const response = await fetch('http://localhost:3001/api/send-call-request', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

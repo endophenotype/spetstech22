@@ -57,6 +57,36 @@ app.post('/api/send-call-request', (req, res) => {
   });
 });
 
+app.post('/api/send-calculator-request', (req, res) => {
+  const { name, phone, material, volume, address } = req.body;
+
+  const mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: 'tima.golubev@mail.ru',
+    subject: 'Новая заявка на расчёт стоимости',
+    html: `
+      <h2>Новая заявка на расчёт стоимости</h2>
+      <p><strong>Имя:</strong> ${name || 'не указано'}</p>
+      <p><strong>Телефон:</strong> ${phone}</p>
+      <p><strong>Материал:</strong> ${material}</p>
+      <p><strong>Объём:</strong> ${volume} м³</p>
+      <p><strong>Адрес доставки:</strong> ${address}</p>
+    `,
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error('Error sending email:', error);
+      if (error.response) {
+        console.error('Nodemailer response:', error.response);
+      }
+      return res.status(500).send({ message: 'Error sending email', error: error.message });
+    }
+    console.log('Email sent:', info.response);
+    res.status(200).send({ message: 'Email sent successfully' });
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });

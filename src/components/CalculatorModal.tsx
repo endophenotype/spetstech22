@@ -75,7 +75,7 @@ const CalculatorModal = ({ isOpen, onClose }: CalculatorModalProps) => {
     }
 
     try {
-      const response = await fetch('/api/send-calculator-request', {
+      const response = await fetch('http://localhost:3001/api/send-calculator-request', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
