@@ -39,9 +39,9 @@ const CalculatorModal = ({ isOpen, onClose }: CalculatorModalProps) => {
   const deliveryCostDisplay = "Рассчитаем стоимость доставки и  и сообщим вам по телефону";
   const totalCostDisplay = materialCost.toLocaleString() + " ₽ + стоимость доставки";
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validate required fields
     if (!formData.material || !formData.volume || !formData.address || !formData.phone) {
       toast({
@@ -74,19 +74,39 @@ const CalculatorModal = ({ isOpen, onClose }: CalculatorModalProps) => {
       return;
     }
 
-    toast({
-      title: "Заявка отправлена!",
-      description: "Мы свяжемся с вами в течение 15 минут для уточнения деталей заказа.",
-    });
+    try {
+      const response = await fetch('/api/send-calculator-request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    onClose();
-    setFormData({
-      material: '',
-      volume: '',
-      address: '',
-      phone: '',
-      name: ''
-    });
+      if (response.ok) {
+        toast({
+          title: "Заявка отправлена!",
+          description: "Мы свяжемся с вами в течение 15 минут для уточнения деталей заказа.",
+        });
+        onClose();
+        setFormData({
+          material: '',
+          volume: '',
+          address: '',
+          phone: '',
+          name: ''
+        });
+      } else {
+        throw new Error('Failed to send request');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Ошибка отправки",
+        description: "Не удалось отправить заявку. Пожалуйста, попробуйте еще раз.",
+        variant: "destructive"
+      });
+    }
   };
 
   return (
