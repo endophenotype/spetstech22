@@ -75,12 +75,23 @@ const CalculatorModal = ({ isOpen, onClose }: CalculatorModalProps) => {
     }
 
     try {
-      const response = await fetch('http://localhost:3001/api/send-calculator-request', {
+      const selectedMaterial = materials.find(m => m.value === formData.material);
+      const materialLabel = selectedMaterial ? selectedMaterial.label : '';
+      const materialCost = selectedMaterial && formData.volume ?
+        selectedMaterial.price * parseFloat(formData.volume) : 0;
+      const totalCost = materialCost.toLocaleString() + " ₽ + стоимость доставки";
+
+      const response = await fetch('/api/send-calculator-request', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          material: materialLabel,
+          volume: formData.volume + " м³",
+          totalCost: totalCost
+        }),
       });
 
       if (response.ok) {
