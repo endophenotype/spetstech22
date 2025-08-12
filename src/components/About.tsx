@@ -25,43 +25,47 @@ const About = () => {
   const advantages = [
     {
       icon: Shield,
-      title: 'Гарантия качества',
-      description: 'Все материалы соответствуют ГОСТ и имеют сертификаты качества'
+      title: "Гарантия качества",
+      description:
+        "Все материалы соответствуют ГОСТ и имеют сертификаты качества",
     },
     {
       icon: Truck,
-      title: 'Цены от производителя',
-      description: 'Прямые поставки с карьеров без посредников'
+      title: "Цены от производителя",
+      description: "Прямые поставки с карьеров без посредников",
     },
     {
       icon: Clock,
-      title: 'Доставка 24/7',
-      description: 'Работаем круглосуточно, доставляем в удобное время'
+      title: "Быстрая доставка",
+      description: "Работаем с 8:00 до 20:00, доставляем в удобное время",
     },
     {
       icon: Award,
-      title: 'Опыт с 2023 года',
-      description: 'Надёжный партнёр для строительных компаний'
-    }
+      title: "Опыт с 2023 года",
+      description: "Надёжный партнёр для строительных компаний",
+    },
   ];
 
   return (
-    <section 
-      id="about" 
+    <section
+      id="about"
       ref={sectionRef}
       className="py-20 sand-texture relative"
     >
       <div className="container mx-auto px-4">
-        <div className={`text-center mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <div
+          className={`text-center mb-16 transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-accent mb-6">
             О компании Спецтех-22
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Мы специализируемся на поставках высококачественных сыпучих материалов 
-            для строительства. Собственный автопарк и прямые договоры с карьерами 
-            позволяют нам предлагать лучшие цены и гарантировать своевременную доставку.
+            Мы специализируемся на поставках высококачественных сыпучих
+            материалов для строительства. Собственный автопарк и прямые договоры
+            с карьерами позволяют нам предлагать лучшие цены и гарантировать
+            своевременную доставку.
           </p>
         </div>
 
@@ -72,7 +76,9 @@ const About = () => {
               <div
                 key={index}
                 className={`text-center p-6 bg-card rounded-lg shadow-card hover:shadow-soft transition-all duration-500 transform hover:scale-105 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
@@ -91,22 +97,23 @@ const About = () => {
         </div>
 
         {/* Статистика */}
-        <div className={`mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`} style={{ transitionDelay: '600ms' }}>
+        <div
+          className={`mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+          style={{ transitionDelay: "600ms" }}
+        >
           {[
-            { number: '500+', label: 'Довольных клиентов' },
-            { number: '10 000+', label: 'Тонн материалов' },
-            { number: '24/7', label: 'Работаем без выходных' },
-            { number: '100%', label: 'Гарантия качества' }
+            { number: "500+", label: "Довольных клиентов" },
+            { number: "10 000+", label: "Тонн материалов" },
+            { number: "с 8:00 до 20:00", label: "Работаем без выходных" },
+            { number: "100%", label: "Гарантия качества" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-3xl md:text-4xl font-heading font-bold text-primary mb-2">
                 {stat.number}
               </div>
-              <div className="text-sm text-muted-foreground">
-                {stat.label}
-              </div>
+              <div className="text-sm text-muted-foreground">{stat.label}</div>
             </div>
           ))}
         </div>

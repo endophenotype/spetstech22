@@ -73,21 +73,23 @@ const ProductCatalog = ({ onCalculatorOpen }: ProductCatalogProps) => {
   ];
 
   return (
-    <section 
-      id="catalog" 
+    <section
+      id="catalog"
       ref={sectionRef}
       className="py-20 bg-subtle-gradient relative"
     >
       <div className="container mx-auto px-4">
-        <div className={`text-center mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <div
+          className={`text-center mb-16 transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-accent mb-6">
             Каталог материалов
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Широкий ассортимент качественных сыпучих материалов 
-            для любых строительных задач
+            Широкий ассортимент качественных сыпучих материалов для любых
+            строительных задач
           </p>
         </div>
 
@@ -96,23 +98,25 @@ const ProductCatalog = ({ onCalculatorOpen }: ProductCatalogProps) => {
             <div
               key={index}
               className={`bg-card rounded-lg shadow-card hover:shadow-soft transition-all duration-500 transform hover:scale-105 overflow-hidden ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="h-48 bg-muted overflow-hidden">
-                <img 
-                  src={product.image} 
+                <img
+                  src={product.image}
                   alt={product.title}
                   className="w-full h-full object-cover"
                 />
               </div>
-              
+
               <div className="p-6">
                 <h3 className="text-xl font-heading font-bold text-accent mb-3">
                   {product.title}
                 </h3>
-                
+
                 <ul className="text-sm text-muted-foreground mb-4 space-y-1">
                   {product.variants.map((variant, vIndex) => (
                     <li key={vIndex} className="flex items-center">
@@ -121,10 +125,11 @@ const ProductCatalog = ({ onCalculatorOpen }: ProductCatalogProps) => {
                     </li>
                   ))}
                 </ul>
-                
+
                 <div className="flex items-center justify-between">
                   <div className="text-2xl font-heading font-bold text-primary">
-                    {product.price} ₽<span className="text-sm text-muted-foreground">/м³</span>
+                    {product.price} ₽
+                    <span className="text-sm text-muted-foreground">/м³</span>
                   </div>
                   <Button
                     onClick={onCalculatorOpen}
@@ -140,16 +145,19 @@ const ProductCatalog = ({ onCalculatorOpen }: ProductCatalogProps) => {
           ))}
         </div>
 
-        <div className={`text-center transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`} style={{ transitionDelay: '800ms' }}>
+        <div
+          className={`text-center transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+          style={{ transitionDelay: "800ms" }}
+        >
           <div className="bg-primary/5 rounded-lg p-8 max-w-2xl mx-auto">
             <h3 className="text-xl font-heading font-bold text-accent mb-4">
               Быстрая доставка по области
             </h3>
             <p className="text-muted-foreground mb-6">
-              Доставляем материалы в течение дня по Барнаулу. 
-              Собственный автопарк самосвалов от 10 до 25 тонн.
+              Доставляем материалы в течение дня по Бийску. Собственный автопарк
+              самосвалов от 10 до 25 тонн.
             </p>
             <Button
               onClick={onCalculatorOpen}

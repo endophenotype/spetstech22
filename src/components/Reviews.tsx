@@ -59,36 +59,42 @@ const Reviews = () => {
   useEffect(() => {
     const interval = setInterval(nextReview, 5000); // автоматическое переключение каждые 5 секунд
     return () => clearInterval(interval);
-  }, []);
+  });
 
   return (
-    <section 
-      id="reviews" 
+    <section
+      id="reviews"
       ref={sectionRef}
       className="py-20 sand-texture relative"
     >
       <div className="container mx-auto px-4">
-        <div className={`text-center mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <div
+          className={`text-center mb-16 transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-accent mb-6">
             Отзывы наших клиентов
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Более 500 довольных клиентов доверяют нам поставку строительных материалов
+            Более 500 довольных клиентов доверяют нам поставку строительных
+            материалов
           </p>
         </div>
 
-        <div className={`max-w-4xl mx-auto transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`} style={{ transitionDelay: '300ms' }}>
+        <div
+          className={`max-w-4xl mx-auto transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+          style={{ transitionDelay: "300ms" }}
+        >
           <div className="relative">
             {/* Слайдер отзывов */}
             <div className="bg-card rounded-lg shadow-card p-8 md:p-12 relative overflow-hidden">
               <div className="absolute top-6 left-6">
                 <Quote className="w-12 h-12 text-primary/20" />
               </div>
-              
+
               <div className="relative z-10">
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -96,17 +102,17 @@ const Reviews = () => {
                       key={i}
                       className={`w-5 h-5 ${
                         i < reviews[currentReview].rating
-                          ? 'text-yellow-400 fill-current'
-                          : 'text-gray-300'
+                          ? "text-yellow-400 fill-current"
+                          : "text-gray-300"
                       }`}
                     />
                   ))}
                 </div>
-                
+
                 <blockquote className="text-lg md:text-xl text-foreground leading-relaxed mb-6">
                   "{reviews[currentReview].text}"
                 </blockquote>
-                
+
                 <div className="flex items-center justify-between">
                   <div>
                     <cite className="text-lg font-heading font-bold text-accent not-italic">
@@ -119,7 +125,7 @@ const Reviews = () => {
                       Проект: {reviews[currentReview].project}
                     </p>
                   </div>
-                  
+
                   <div className="flex space-x-2">
                     <Button
                       variant="outline"
@@ -150,8 +156,8 @@ const Reviews = () => {
                   onClick={() => setCurrentReview(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     currentReview === index
-                      ? 'bg-primary scale-125'
-                      : 'bg-primary/30 hover:bg-primary/50'
+                      ? "bg-primary scale-125"
+                      : "bg-primary/30 hover:bg-primary/50"
                   }`}
                 />
               ))}
@@ -160,23 +166,28 @@ const Reviews = () => {
         </div>
 
         {/* Статистика внизу */}
-        <div className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`} style={{ transitionDelay: '600ms' }}>
+        <div
+          className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+          style={{ transitionDelay: "600ms" }}
+        >
           {[
-            { number: '500+', label: 'Довольных клиентов', icon: '👥' },
-            { number: '4.9', label: 'Средняя оценка', icon: '⭐' },
-            { number: '98%', label: 'Повторных заказов', icon: '🔄' },
-            { number: '24/7', label: 'Поддержка клиентов', icon: '📞' }
+            { number: "500+", label: "Довольных клиентов", icon: "👥" },
+            { number: "4.9", label: "Средняя оценка", icon: "⭐" },
+            { number: "98%", label: "Повторных заказов", icon: "🔄" },
+            {
+              number: "с 8:00 до 20:00",
+              label: "Поддержка клиентов",
+              icon: "📞",
+            },
           ].map((stat, index) => (
             <div key={index} className="text-center bg-card/50 rounded-lg p-4">
               <div className="text-2xl mb-2">{stat.icon}</div>
               <div className="text-2xl md:text-3xl font-heading font-bold text-primary mb-1">
                 {stat.number}
               </div>
-              <div className="text-sm text-muted-foreground">
-                {stat.label}
-              </div>
+              <div className="text-sm text-muted-foreground">{stat.label}</div>
             </div>
           ))}
         </div>

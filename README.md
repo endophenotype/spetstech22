@@ -10,7 +10,7 @@ Spetstech22 is a modern platform for the supply of high—quality bulk materials
 Catalog of materials: Detailed information about each product with options and prices.
 Cost Calculator: A quick calculation of the cost of materials and shipping.
 Company information: Advantages of working with us, statistics and customer reviews.
-24/7 delivery: Own fleet and quality assurance of transportation.
+Fast delivery: Own fleet and quality assurance of transportation.
 Customer Reviews: Real reviews from satisfied customers.
 
 ## Technologies
