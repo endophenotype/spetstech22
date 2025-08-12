@@ -36,38 +36,38 @@ const Header = ({ onCallModalOpen }: HeaderProps) => {
   ];
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-card/95 backdrop-blur-sm shadow-card' 
-          : 'bg-transparent'
+        isScrolled
+          ? "bg-card/95 backdrop-blur-sm shadow-card"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Логотип */}
-          <div 
-            className="flex items-center space-x-3 cursor-pointer" 
-            onClick={() => scrollToSection('hero')}
+          <div
+            className="flex items-center space-x-3 cursor-pointer"
+            onClick={() => scrollToSection("hero")}
           >
-            <img 
-              src={logoTruck} 
-              alt="Спецтех-22 логотип" 
+            <img
+              src={logoTruck}
+              alt="Спецтех22 логотип"
               className="w-12 h-12 object-contain"
             />
             <div className="hidden sm:block">
-              <h1 className={`text-xl font-heading font-bold ${
-        isScrolled 
-          ? 'text-accent' 
-          : 'text-white'
-      }`}>
-                Спецтех-22
+              <h1
+                className={`text-xl font-heading font-bold ${
+                  isScrolled ? "text-accent" : "text-white"
+                }`}
+              >
+                Спецтех22
               </h1>
-              <p className={`text-xs  ${
-        isScrolled 
-          ? 'text-muted-foreground' 
-          : 'text-white'
-      }`}>
+              <p
+                className={`text-xs  ${
+                  isScrolled ? "text-muted-foreground" : "text-white"
+                }`}
+              >
                 Сыпучие материалы
               </p>
             </div>
@@ -105,7 +105,11 @@ const Header = ({ onCallModalOpen }: HeaderProps) => {
               className="lg:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMenuOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </Button>
           </div>
         </div>

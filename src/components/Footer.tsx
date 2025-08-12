@@ -25,11 +25,11 @@ const Footer = () => {
               <div className="flex items-center space-x-3 mb-6">
                 <img
                   src={logoTruck}
-                  alt="Спецтех-22 логотип"
+                  alt="Спецтех22 логотип"
                   className="w-8 h-8 object-contain brightness-0 invert"
                 />
                 <div>
-                  <h3 className="text-xl font-heading font-bold">Спецтех-22</h3>
+                  <h3 className="text-xl font-heading font-bold">Спецтех22</h3>
                   <p className="text-sm text-accent-foreground/80">
                     Сыпучие материалы
                   </p>
@@ -132,7 +132,7 @@ const Footer = () => {
           <div className="border-t border-accent-foreground/20 mt-12 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-sm text-accent-foreground/70">
-                © 2023 Спецтех-22. Все права защищены.{" "}
+                © 2023 Спецтех22 (ИНН 2204097636). Все права защищены.{" "}
                 <button
                   onClick={() => setCopyrightModalOpen(true)}
                   className="text-primary hover:underline"
@@ -175,7 +175,7 @@ const Footer = () => {
             <p>
               Настоящая Политика конфиденциальности регулирует порядок обработки
               и использования персональных данных пользователей сайта компании
-              "Спецтех-22".
+              "Спецтех22".
             </p>
             <h4 className="font-bold">1. Сбор информации</h4>
             <p>
@@ -210,7 +210,7 @@ const Footer = () => {
             <p>
               Все материалы данного сайта, включая тексты, изображения, дизайн и
               логотипы, являются объектами авторского права и принадлежат
-              компании "Спецтех-22".
+              компании "Спецтех22".
             </p>
             <p>
               Использование материалов сайта без письменного разрешения

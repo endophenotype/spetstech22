@@ -58,7 +58,7 @@ const About = () => {
           }`}
         >
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-accent mb-6">
-            О компании Спецтех-22
+            О компании Спецтех22
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Мы специализируемся на поставках высококачественных сыпучих

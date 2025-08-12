@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Спецтех-22 Design System - Природные оттенки для сыпучих материалов */
-
 @layer base {
   :root {
     /* Основная цветовая палитра */
@@ -112,9 +110,7 @@
     --gradient-hero: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--primary)));
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
