@@ -57,7 +57,7 @@ const CallModal = ({ isOpen, onClose }: CallModalProps) => {
       if (response.ok) {
         toast({
           title: "Заявка на звонок принята!",
-          description: "Мы перезвоним вам в течение 15 минут в рабочее время.",
+          description: "Мы перезвоним вам в рабочее время.",
         });
         onClose();
         setFormData({

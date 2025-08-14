@@ -36,7 +36,8 @@ const CalculatorModal = ({ isOpen, onClose }: CalculatorModalProps) => {
   const selectedMaterial = materials.find(m => m.value === formData.material);
   const materialCost = selectedMaterial && formData.volume ? 
     selectedMaterial.price * parseFloat(formData.volume) : 0;
-  const deliveryCostDisplay = "Рассчитаем стоимость доставки и  и сообщим вам по телефону";
+  const deliveryCostDisplay =
+    "Рассчитаем стоимость доставки и сообщим вам по телефону";
   const totalCostDisplay = materialCost.toLocaleString() + " ₽ + стоимость доставки";
 
   const handleSubmit = async (e: React.FormEvent) => {

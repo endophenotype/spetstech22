@@ -5,9 +5,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-dotenv.config({ path: path.resolve(__dirname, '../server/.env') });
-console.log('EMAIL_USER:', process.env.EMAIL_USER ? 'Loaded' : 'Not Loaded');
-console.log('EMAIL_PASS:', process.env.EMAIL_PASS ? 'Loaded' : 'Not Loaded');
+dotenv.config({ path: path.resolve(__dirname, "../server/.env") });
 
 import express from 'express';
 import nodemailer from 'nodemailer';
